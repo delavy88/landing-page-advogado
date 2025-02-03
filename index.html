@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advogado Trabalhista</title>
+    <meta name="description" content="Advogado trabalhista especializado em horas extras, rescisões e processos trabalhistas em Florianópolis.">
+    <meta name="keywords" content="advogado trabalhista, processo trabalhista, horas extras, rescisão direta, rescisão indireta, advogado em Florianópolis">
+    
+    <!-- Estilos CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        .card {
+            max-width: 350px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            background-color: #222433;
+            padding: 15px;
+            text-align: center;
+        }
+        .card-header h4 {
+            color: #ffffff;
+            margin: 0;
+        }
+        .card-body {
+            padding: 15px;
+            background-color: #f8f9fa;
+        }
+        .card-footer {
+            padding: 15px;
+            background-color: #ffffff;
+        }
+        .btn {
+            background-color: #2da003;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #248a03;
+        }
+    </style>
+</head>
+<body>
+    <!-- Conteúdo da Página -->
+    <div class="card">
+        <div class="card-header">
+            <div style="display: flex; align-items: center; justify-content: center;">
+                <img src="logo.png" alt="Logo" style="height: 50px; margin-right: 10px;">
+                <h4>Advogado Trabalhista</h4>
+            </div>
+        </div>
+        <div class="card-body">
+            <p>Precisa de ajuda com processos trabalhistas, horas extras ou rescisões? Fale conosco agora mesmo!</p>
+            <p>Qual é o seu nome?</p>
+        </div>
+        <div class="card-footer">
+            <form id="whatsappForm">
+                <input type="text" id="nome" placeholder="Seu nome" autocomplete="off" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 5px;" required>
+                <input type="email" id="email" placeholder="Seu e-mail" autocomplete="off" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 5px;" required>
+                <button type="submit" class="btn">Enviar Mensagem</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Script deve ser carregado após o corpo da página -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('whatsappForm').addEventListener('submit', function (event) {
+                event.preventDefault(); // Impede o envio padrão do formulário
+
+                // Captura os valores dos campos
+                const nome = document.getElementById('nome').value.trim();
+                const email = document.getElementById('email').value.trim();
+
+                if (!nome || !email) {
+                    alert('Por favor, preencha todos os campos.');
+                    return;
+                }
+
+                // Mensagem pronta para o WhatsApp
+                const mensagem = `Olá, meu nome é ${nome} (${email}). Gostaria de mais informações!`;
+                const mensagemCodificada = encodeURIComponent(mensagem);
+
+                // Número de telefone do escritório (substitua pelo número correto)
+                const telefone = "554831991339"; // Exemplo: +55 (48) 3199-1339
+
+                // Cria o link do WhatsApp
+                const linkWhatsApp = `https://wa.me/${telefone}?text=${mensagemCodificada}`;
+
+                // Redireciona o usuário para o WhatsApp
+  
