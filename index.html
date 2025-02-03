@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advogado Trabalhista</title>
     <meta name="description" content="Advogado trabalhista especializado em horas extras, rescisões e processos trabalhistas em Florianópolis.">
-    <meta name="keywords" content="advogado trabalhista, processo trabalhista, horas extras, rescisão direta, rescisão indireta, advogado em Florianópolis">
     
-    <!-- Estilos CSS -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -47,6 +45,7 @@
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
+            width: 100%;
         }
         .btn:hover {
             background-color: #248a03;
@@ -54,7 +53,6 @@
     </style>
 </head>
 <body>
-    <!-- Conteúdo da Página -->
     <div class="card">
         <div class="card-header">
             <div style="display: flex; align-items: center; justify-content: center;">
@@ -68,14 +66,15 @@
         </div>
         <div class="card-footer">
             <form id="whatsappForm">
-                <input type="text" id="nome" placeholder="Seu nome" autocomplete="off" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 5px;" required>
-                <input type="email" id="email" placeholder="Seu e-mail" autocomplete="off" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 5px;" required>
+                <input type="text" id="nome" placeholder="Seu nome" autocomplete="off" 
+                       style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 5px;" required>
+                <input type="email" id="email" placeholder="Seu e-mail" autocomplete="off" 
+                       style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 5px;" required>
                 <button type="submit" class="btn">Enviar Mensagem</button>
             </form>
         </div>
     </div>
 
-    <!-- Script deve ser carregado após o corpo da página -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('whatsappForm').addEventListener('submit', function (event) {
@@ -101,4 +100,9 @@
                 const linkWhatsApp = `https://wa.me/${telefone}?text=${mensagemCodificada}`;
 
                 // Redireciona o usuário para o WhatsApp
-  
+                window.location.href = linkWhatsApp;
+            });
+        });
+    </script>
+</body>
+</html>
